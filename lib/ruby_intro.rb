@@ -43,15 +43,15 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return /\A[b-df-hj-np-tv-zB-DF-HJ-NP-TV-Z]/ =~ s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return /\A[10]+\z/ =~ s && s[s.length - 1] == "0" && s[s.length - 2] == "0"
 end
 
 # Part 3
