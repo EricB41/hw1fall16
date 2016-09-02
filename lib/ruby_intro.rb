@@ -31,7 +31,6 @@ def sum_to_n? arr, n
     arr.each_index do |currIndex|
       numNeeded = n-arr[currIndex]
       indexOfNum2 = arr.index{|x| x == numNeeded}
-      puts indexOfNum2
       if indexOfNum2 && indexOfNum2 != currIndex
         return true
       end
