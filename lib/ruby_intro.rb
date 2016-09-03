@@ -56,5 +56,44 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(newISBN, newPrice)
+    if newISBN.length == 0 || newPrice <= 0.0
+      raise ArgumentError
+    end
+    @isbn = newISBN
+    @price = newPrice
+  end
+  
+  def isbn=(new_isbn)
+    if new_isbn.length == 0
+      raise ArgumentError
+    end
+    @isbn = new_isbn
+  end
+  def isbn
+    @isbn
+  end
+  
+  def price=(new_price)
+    if new_price <= 0
+      raise ArgumentError
+    end
+    @price = new_price
+  end
+  def price
+    @price
+  end
+  
+  def price_as_string()
+    returnPrice = @price.round(2).to_s
+    
+    if returnPrice =~ /\.\d\d/
+      return "$" + returnPrice
+    elsif returnPrice =~ /\.\d/
+      return "$" + returnPrice + "0"
+    else
+      return "$" + returnPrice + ".00"
+    end
+  end
+
 end
